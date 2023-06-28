@@ -1,0 +1,172 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{1E156070-A302-435E-9958-B68E41CA8D41}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>ActiIV_Conection</RootNamespace>
+    <AssemblyName>ActiIV_Conection</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Configuration.ConfigurationManager, Version=7.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>packages\System.Configuration.ConfigurationManager.7.0.0\lib\net462\System.Configuration.ConfigurationManager.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.OracleClient" />
+    <Reference Include="System.Net" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Security.AccessControl, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>packages\System.Security.AccessControl.6.0.0\lib\net461\System.Security.AccessControl.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security.Permissions, Version=7.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>packages\System.Security.Permissions.7.0.0\lib\net462\System.Security.Permissions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security.Principal.Windows, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>packages\System.Security.Principal.Windows.5.0.0\lib\net461\System.Security.Principal.Windows.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ServiceProcess" />
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CapaController\Conexion.cs" />
+    <Compile Include="CapaController\DepartamentoController.cs" />
+    <Compile Include="CapaController\EmpleadosController.cs" />
+    <Compile Include="CapaModel\Departamento model.cs" />
+    <Compile Include="CapaModel\EmpleadoModel.cs" />
+    <Compile Include="CapaView\Main.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CapaView\Main.Designer.cs">
+      <DependentUpon>Main.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CapaView\PerfilDepartamento.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CapaView\PerfilDepartamento.Designer.cs">
+      <DependentUpon>PerfilDepartamento.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CapaView\PerfilEmpleado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CapaView\PerfilEmpleado.Designer.cs">
+      <DependentUpon>PerfilEmpleado.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="CapaView\Main.resx">
+      <DependentUpon>Main.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CapaView\PerfilDepartamento.resx">
+      <DependentUpon>PerfilDepartamento.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CapaView\PerfilEmpleado.resx">
+      <DependentUpon>PerfilEmpleado.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <None Include="CapaView\.git\COMMIT_EDITMSG" />
+    <None Include="CapaView\.git\config" />
+    <None Include="CapaView\.git\description" />
+    <None Include="CapaView\.git\HEAD" />
+    <None Include="CapaView\.git\hooks\applypatch-msg.sample" />
+    <None Include="CapaView\.git\hooks\commit-msg.sample" />
+    <None Include="CapaView\.git\hooks\fsmonitor-watchman.sample" />
+    <None Include="CapaView\.git\hooks\post-update.sample" />
+    <None Include="CapaView\.git\hooks\pre-applypatch.sample" />
+    <None Include="CapaView\.git\hooks\pre-commit.sample" />
+    <None Include="CapaView\.git\hooks\pre-merge-commit.sample" />
+    <None Include="CapaView\.git\hooks\pre-push.sample" />
+    <None Include="CapaView\.git\hooks\pre-rebase.sample" />
+    <None Include="CapaView\.git\hooks\pre-receive.sample" />
+    <None Include="CapaView\.git\hooks\prepare-commit-msg.sample" />
+    <None Include="CapaView\.git\hooks\push-to-checkout.sample" />
+    <None Include="CapaView\.git\hooks\sendemail-validate.sample" />
+    <None Include="CapaView\.git\hooks\update.sample" />
+    <None Include="CapaView\.git\index" />
+    <None Include="CapaView\.git\info\exclude" />
+    <None Include="CapaView\.git\logs\HEAD" />
+    <None Include="CapaView\.git\logs\refs\heads\main" />
+    <None Include="CapaView\.git\logs\refs\remotes\origin\main" />
+    <None Include="CapaView\.git\objects\1a\f7de150c99c12dd67a509fe57c10d63e4eeb04" />
+    <None Include="CapaView\.git\objects\62\9fbaa43b665bb19fa3773776e958efaf3da47a" />
+    <None Include="CapaView\.git\objects\80\6e64ed752820111a0c0641bf5c36c3787d8506" />
+    <None Include="CapaView\.git\objects\ac\3559cfd2e9f4327dbf0d0fe54699c91cdc6cb1" />
+    <None Include="CapaView\.git\objects\b6\94ba5ecb6ccdb000dc1490a2c5d5c1b0b7e9e3" />
+    <None Include="CapaView\.git\objects\bb\4c20d0b5103d118bb4b3163d74cfd33f5cd3a5" />
+    <None Include="CapaView\.git\objects\dc\530d131d79c7c67a693e09a706520518c7f28c" />
+    <None Include="CapaView\.git\objects\ef\c634b3d8dddd2bc18c96ef3bd2c3fa7e52165b" />
+    <None Include="CapaView\.git\objects\f5\a0928124acaef3976f520cf06582440e94228b" />
+    <None Include="CapaView\.git\objects\f9\09995ed46f889910f2acdc8d87185e31ad9498" />
+    <None Include="CapaView\.git\refs\heads\main" />
+    <None Include="CapaView\.git\refs\remotes\origin\main" />
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="CapaView\.git\objects\info\" />
+    <Folder Include="CapaView\.git\objects\pack\" />
+    <Folder Include="CapaView\.git\refs\tags\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
